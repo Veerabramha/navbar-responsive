@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Poppins";
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkblue;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.list-container {
+    display: flex;
+    gap: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.list-container li a:hover {
+    color: chocolate;
+}
+
+.list-container .login a:hover {
+    color: #ffffff;
+}
+
+.dropdown-menu li a {
+    color: #111111;
+}
+
+.dropdown-menu li a:hover {
+    color: chocolate;
+}
+
+#downArrow,
+label {
+    display: none;
+}
+
+.login {
+    background-color: chocolate;
+    border-radius: 6px;
+    padding: 3px 10px;
+    transition: 0.3s;
+}
+
+.login:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    color: black;
+    box-shadow: 0px 5px 12px 0px;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    margin-top: 14px;
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+#toggle,
+.menu-icon,
+.close-icon {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*....media queries....*/
+
+@media (max-width: 580px) {
+
+    .list-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px;
+    }
+
+    #toggle:checked~.list-container {
+        display: flex;
+        animation: fadeIn 1s ease;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .close-icon {
+        display: none;
+        cursor: pointer;
+    }
+
+    #toggle:checked~.menu-icon {
+        display: none;
+    }
+
+    #toggle:checked~.close-icon {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .drop-icon {
+        display: block;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #downArrow:checked~.dropdown-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: row;
+    }
+}

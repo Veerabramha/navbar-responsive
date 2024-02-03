@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/ceac0f703c.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>NavBar Responsive</title>
+  </head>
+  <body>
+    <nav class="nav-container">
+      <a href="#">Logo</a>
+      <input type="checkbox" id="toggle" />
+      <label for="toggle" class="menu-icon"
+        ><i class="fa-solid fa-bars fa-lg" style="color: #ffffff"></i
+      ></label>
+      <label for="toggle" class="close-icon"
+        ><i class="fa-solid fa-xmark fa-lg" style="color: #ffffff"></i
+      ></label>
+      <ul class="list-container">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <input type="checkbox" id="downArrow" />
+          <label for="downArrow" class="drop-icon"
+            ><i class="fa-solid fa-caret-down" style="color: #ffffff"></i
+          ></label>
+          <ul class="dropdown-menu">
+            <li><a href="#">Gadgets</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Books</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="login"><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
